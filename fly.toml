@@ -28,6 +28,16 @@ processes = []
     port = 80
 
   [[services.ports]]
+    force_https = false
+    handlers = ["http"]
+    port = 25565
+
+  [[services.ports]]
+    force_https = false
+    handlers = ["http"]
+    port = 25575
+
+  [[services.ports]]
     handlers = ["tls", "http"]
     port = 443
 
