@@ -6,6 +6,7 @@ services:
     environment:
       EULA: "true"
       VERSION: "1.19.2"
+      ONLINE_MODE: "false"
     ports:
       - "25565:25565"
     volumes:
