@@ -5,10 +5,18 @@ services:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
-      VERSION: "1.19.2"
+      MEMORY: "8G"
+      VERSION: "1.18.2"
+      SERVER_NAME: "joogie"
+      MOTD: "joogie's server for degens"
       ONLINE_MODE: "false"
+      SKIP_SERVER_PROPERTIES: false
+      MAX_PLAYERS: 50
+      SPAWN_NPCS: false
+      VIEW_DISTANCE: 12
     ports:
       - "25565:25565"
+      - "25575:25575"
     volumes:
       - data:/data
     stdin_open: true

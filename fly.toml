@@ -6,6 +6,16 @@ kill_timeout = 5
 processes = []
 
 [env]
+  EULA = "true"
+  MEMORY = "2G"
+  VERSION = "1.18.2"
+  SERVER_NAME = "joogie"
+  MOTD = "joogie's server for degens"
+  ONLINE_MODE = "false"
+  SKIP_SERVER_PROPERTIES = false
+  MAX_PLAYERS = 50
+  SPAWN_NPCS = false
+  VIEW_DISTANCE = 12
 
 [experimental]
   allowed_public_ports = []
@@ -17,6 +27,7 @@ processes = []
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
+
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
@@ -28,12 +39,12 @@ processes = []
     port = 80
 
   [[services.ports]]
-    force_https = false
+    force_https = true
     handlers = ["http"]
     port = 25565
 
   [[services.ports]]
-    force_https = false
+    force_https = true
     handlers = ["http"]
     port = 25575
 
