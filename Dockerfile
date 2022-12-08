@@ -7,10 +7,10 @@ FROM ${BASE_IMAGE}
 # ensure consistent cache updates.
 ARG BUILD_FILES_REV=1
 RUN --mount=target=/build,source=build \
-    REV=${BUILD_FILES_REV} /build/run.sh install-packages
+  REV=${BUILD_FILES_REV} /build/run.sh install-packages
 
 RUN --mount=target=/build,source=build \
-    REV=${BUILD_FILES_REV} /build/run.sh setup-user
+  REV=${BUILD_FILES_REV} /build/run.sh setup-user
 
 COPY --chmod=644 files/sudoers* /etc/sudoers.d
 
@@ -57,7 +57,7 @@ WORKDIR /data
 
 STOPSIGNAL SIGTERM
 
-ENV UID=1000 GID=1000 RCON_PASSWORD=minecraft
+ENV TYPE=VANILLA VERSION="1.18.2" EULA=TRUE UID=1000 GID=1000 RCON_PASSWORD=minecraft ONLINE_MODE="false" VIEW_DISTANCE=12 SERVER_NAME="joogie" MOTD="joogie's server for degens" MEMORY=1G
 
 COPY --chmod=755 scripts/start* /
 COPY --chmod=755 bin/ /usr/local/bin/
