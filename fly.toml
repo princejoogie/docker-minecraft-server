@@ -7,7 +7,7 @@ processes = []
 
 [env]
   EULA = "true"
-  MEMORY = "2G"
+  MEMORY = "1G"
   VERSION = "1.18.2"
   SERVER_NAME = "joogie"
   MOTD = "joogie's server for degens"
